@@ -1,10 +1,25 @@
 import React from 'react';
+// Uuid
+import Uuid from 'uuid/v4';
+// Components
+import Person from './Person';
 
 const List = (props) => {
 
+    let { personList } = props;
+
     return (
         <div>
-            <p>List Component</p>
+            {
+                personList.map(person => (
+                    <Person 
+                        key={Uuid()} 
+                        person={person} 
+                        personList={personList} 
+                    />
+                    ) 
+                )
+            }
         </div>
     )
 }
