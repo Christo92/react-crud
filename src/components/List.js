@@ -6,7 +6,8 @@ import Person from './Person';
 
 const List = (props) => {
 
-    let { personList } = props;
+    // Let's destructuring
+    let { personList, removePerson } = props;
 
     return (
         <div>
@@ -16,6 +17,7 @@ const List = (props) => {
                         key={Uuid()} 
                         person={person} 
                         personList={personList} 
+                        removePerson={removePerson}
                     />
                     ) 
                 )
