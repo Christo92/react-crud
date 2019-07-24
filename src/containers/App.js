@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // Components
 import Form from './Form';
-import List from './List';
+import List from '../components/List';
 
 class App extends Component {
 

@@ -2,7 +2,7 @@ import React from 'react';
 // Uuid
 import Uuid from 'uuid/v4';
 // Components
-import Person from './Person';
+import Person from '../containers/Person';
 
 const List = (props) => {
 
