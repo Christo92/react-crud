@@ -1,36 +1,26 @@
 import React, { Component } from 'react';
+// Redux
+import { connect } from 'react-redux';
+// Actions 
+import { addPersonAction } from '../actions/formActions';
 
 class Form extends Component {
-
-    state = {
-        firstName: '',
-        lastName: ''
-    };
-
-    // Handle the change value of the firstname input
-    handleChangeFirstName = (e) => {
-        this.setState({
-            firstName: e.target.value
-        });
-    };
-
-    // Handle the change value of the lastname input
-    handleChangeLastName = (e) => {
-        this.setState({
-            lastName: e.target.value
-        });
-    };
 
     // Submit the form
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addPerson(this.state);
+        let firstName = this.refs.inputFirsName.value;
+        let lastName = this.refs.inputLastName.value;
+        const data = {
+            firstName,
+            lastName
+        }
 
-        // To reset the input
-        this.setState({
-            firstName: '',
-            lastName: ''
-        });
+        // Let's call the actionCreator
+        this.props.addPersonAction(data);
+
+        this.refs.inputFirsName.value = '';
+        this.refs.inputLastName.value = '';
     };
 
     render() {
@@ -39,16 +29,18 @@ class Form extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <p>Firstname :</p>
                     <input 
-                        type="text" 
+                        type="text"
+                        ref="inputFirsName"
                         placeholder="firstname" 
-                        value={this.state.firstName}
+                        value={this.props.firstName}
                         onChange={this.handleChangeFirstName}
                     />
                     <p>Lastname :</p>
                     <input 
-                        type="text" 
+                        type="text"
+                        ref="inputLastName"
                         placeholder="lastname"
-                        value={this.state.lastName}
+                        value={this.props.lastName}
                         onChange={this.handleChangeLastName}
                     />
                     <br/><br/>
@@ -59,4 +51,18 @@ class Form extends Component {
     };
 }
 
-export default Form;
+const mapStateToProps = state => {
+    return {
+        personList: state.personList,
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addPersonAction: (value) => {
+            dispatch(addPersonAction(value));
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

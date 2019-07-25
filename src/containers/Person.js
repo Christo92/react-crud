@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 class Person extends Component {
 
-    state = {
-        firstName: '',
-        lastName: '',
-        isEditing: false
-    };
+    // state = {
+    //     firstName: '',
+    //     lastName: '',
+    //     isEditing: false
+    // };
 
     // Update the state when the component mounts
     componentDidMount() {

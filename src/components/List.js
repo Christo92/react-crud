@@ -12,15 +12,15 @@ const List = (props) => {
     return (
         <div>
             {
-                personList.map(person => (
-                    <Person 
-                        key={Uuid()} 
-                        person={person} 
-                        personList={personList} 
-                        removePerson={removePerson}
-                    />
-                    ) 
-                )
+                // personList.map(person => (
+                //     <Person 
+                //         key={Uuid()} 
+                //         person={person} 
+                //         personList={personList} 
+                //         removePerson={removePerson}
+                //     />
+                //     ) 
+                // )
             }
         </div>
     )
