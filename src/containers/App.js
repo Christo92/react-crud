@@ -7,22 +7,8 @@ import { connect } from 'react-redux';
 
 class App extends Component {
 
-    // Remove person from the list
-    removePerson = (item) => {
-        // We use filter to not mutate the personList array
-        // let removePerson = this.state.personList.filter(removeItem => {
-        //     return removeItem !== item
-        // });
-
-        // // then we update the state a new time
-        // this.setState({
-        //     personList: [...removePerson]
-        // });
-        this.props.removePerson(item);
-    };
-
     render() {
-
+        // Root of the application
         return (
             <div>
                 <h3>React-CRUD</h3>

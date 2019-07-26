@@ -1,6 +1,7 @@
 // Actions Types
-import { ADD_PERSON, REMOVE_PERSON, EDIT_PERSON } from './actionTypes';
+import { ADD_PERSON, REMOVE_PERSON, REMOVE_ALL, EDIT_PERSON, UPDATE_PERSON } from './actionTypes';
 
+// Actions Creators
 export function addPersonAction(data) {
     return {
         type: ADD_PERSON,
@@ -15,10 +16,24 @@ export function removePersonAction(id) {
     }
 };
 
-export function editPerson(id) {
+export function removeAllPersonAction() {
+    return {
+        type: REMOVE_ALL
+    }
+};
+
+export function editPersonAction(id) {
     return {
         type: EDIT_PERSON,
         id
+    }
+};
+
+export function updatePersonAction(id, data) {
+    return {
+        type: UPDATE_PERSON,
+        id,
+        data,
     }
 };
 

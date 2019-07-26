@@ -9,7 +9,7 @@ import { store } from './storeConfig/store';
 // Let's mount the App 
 ReactDOM.render(
     <Provider store={store}>
-    <App />
+        <App />
     </Provider>, 
     document.querySelector('#root')
 );

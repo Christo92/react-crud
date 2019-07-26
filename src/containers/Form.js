@@ -15,6 +15,8 @@ class Form extends Component {
         let id = Uuid();
         let firstName = this.refs.inputFirsName.value;
         let lastName = this.refs.inputLastName.value;
+
+        // Store the data
         const data = {
             id,
             firstName,
@@ -25,6 +27,7 @@ class Form extends Component {
         // Let's call the actionCreator
         this.props.addPersonAction(data);
 
+        // Empties the fields
         this.refs.inputFirsName.value = '';
         this.refs.inputLastName.value = '';
     };
@@ -39,7 +42,6 @@ class Form extends Component {
                         ref="inputFirsName"
                         placeholder="firstname" 
                         value={this.props.firstName}
-                        onChange={this.handleChangeFirstName}
                     />
                     <p>Lastname :</p>
                     <input 
@@ -47,7 +49,6 @@ class Form extends Component {
                         ref="inputLastName"
                         placeholder="lastname"
                         value={this.props.lastName}
-                        onChange={this.handleChangeLastName}
                     />
                     <br/><br/>
                     <button>Submit</button>
@@ -57,12 +58,15 @@ class Form extends Component {
     };
 }
 
+
+// Let's change state to props
 const mapStateToProps = state => {
     return {
-        personList: state.personList,
+        personList: state
     }
 };
 
+// Let's change function to props
 const mapDispatchToProps = dispatch => {
     return {
         addPersonAction: (value) => {
