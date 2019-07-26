@@ -14,13 +14,12 @@ class List extends Component {
 
         return (
             <div>
-                <h1>All Persons</h1>
+                <h1>Person List</h1>
                 {
                     personList.map(person => (
                         <Person 
                             key={person.id} 
                             person={person}
-                            isEditing={person.isEditing}
                         />
                         ) 
                     )

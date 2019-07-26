@@ -8,9 +8,10 @@ export function addPersonAction(data) {
     }
 };
 
-export function removePerson() {
+export function removePersonAction(id) {
     return {
-        type: REMOVE_PERSON
+        type: REMOVE_PERSON,
+        id
     }
 };
 

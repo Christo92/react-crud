@@ -1,52 +1,16 @@
 import React, { Component } from 'react';
 // Redux
 import { connect } from 'react-redux';
+// Action Types
+import { removePersonAction } from '../actions/formActions';
 
 class Person extends Component {
 
-    // state = {
-    //     firstName: '',
-    //     lastName: '',
-    //     isEditing: false
-    // };
-
-    // Update the state when the component mounts
-    // componentDidMount() {
-    //     this.setState({
-    //         firstName: this.props.person.firstName,
-    //         lastName: this.props.person.lastName
-    //     });
-    // };
-
-    // Update value from a person
-    // editPerson = () => {
-    //     // Change the isEditing boolean value
-    //     this.setState({
-    //         isEditing: !this.state.editing
-    //     });
-    // };
-
-    // Update the firstName value of a person
-    // handleUpdateFirstName = (e) => {
-    //     this.setState({
-    //         firstName: e.target.value
-    //     });
-    // };
-
-    // Update the lastName value of a person
-    // handleUpdateLastName = (e) => {
-    //     this.setState({
-    //         lastName: e.target.value
-    //     });
-    // };
-    
-    // handleUpdate = (e) => {
-    //     e.preventDefault();
-    //     this.setState({
-    //         isEditing: false
-    //     })
-    // };
-
+    handleRemovePerson = () => {
+        // Send the id of person to param
+        let idPerson = this.props.person.id;
+        this.props.removePerson(idPerson)
+    }
 
     render() {
 
@@ -62,7 +26,7 @@ class Person extends Component {
                         <div>
                             <li>FirstName: {firstName} </li>
                             <li>LastName: {lastName}</li>
-                            <button>Remove</button>
+                            <button onClick={this.handleRemovePerson}>Remove</button>
                             <button>Edit</button>
                         </div>
                     // isEditing ? (
@@ -99,6 +63,14 @@ class Person extends Component {
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+        removePerson: (id) => {
+            dispatch(removePersonAction(id))
+        }
+    }
+}
 
 
-export default connect()(Person);
+
+export default connect(null, mapDispatchToProps)(Person);
