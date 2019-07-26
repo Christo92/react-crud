@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// Uuid
+import Uuid from 'uuid/v4';
 // Redux
 import { connect } from 'react-redux';
 // Actions 
@@ -9,11 +11,15 @@ class Form extends Component {
     // Submit the form
     handleSubmit = (e) => {
         e.preventDefault();
+        // Let's get value of all fields
+        let id = Uuid();
         let firstName = this.refs.inputFirsName.value;
         let lastName = this.refs.inputLastName.value;
         const data = {
+            id,
             firstName,
-            lastName
+            lastName,
+            isEditing: false
         }
 
         // Let's call the actionCreator

@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
 // Components
 import Form from './Form';
-import List from '../components/List';
+import List from './List';
 // Redux
 import { connect } from 'react-redux';
 
 class App extends Component {
-
-    // Add person on the list
-    addPerson = (value) => {
-        // let oldPersonList = this.state.personList;
-        // let newPerson = [...oldPersonList, value];
-
-        // this.setState({
-        //     personList: newPerson
-        // });
-        this.props.addPerson(value);
-    };
 
     // Remove person from the list
     removePerson = (item) => {
@@ -34,38 +23,14 @@ class App extends Component {
 
     render() {
 
-        // Let's destructuring
-        //const { personList } = this.state;
-
         return (
             <div>
                 <h3>React-CRUD</h3>
-                <Form/>
-                <List 
-                    personList={this.props.personList}
-                    removePerson={this.removePerson}
-                />
+                <Form />
+                <List />
             </div>
         );
     }
 }
-
-// const mapStateToProps = state => {
-//     return {
-//         personList: state.personList
-//     }
-// };
-
-// const mapDisptachToProps = dispatch => {
-//     return {
-//         addPerson: () => {
-//             dispatch(addPersonAction());
-//         },
-//         removePerson: () => {
-//             dispatch(removePerson());
-//         }
-//     }
-
-// };
 
 export default connect()(App);

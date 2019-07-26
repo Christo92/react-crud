@@ -1,11 +1,6 @@
 // Action Types
 // FORM
-export const FIRSTNAME_VALUE = 'FIRSTNAME_VALUE';
-export const LASTNAME_VALUE = 'LASTNAME_VALUE';
-export const FORM_SUBMIT = 'FORM_SUBMIT';
 export const ADD_PERSON = 'ADD_PERSON';
 // PERSON
 export const REMOVE_PERSON = 'REMOVE_PERSON';
 export const EDIT_PERSON = 'EDIT_PERSON';
-export const FIRSTNAME_UPDATE = 'FIRSTNAME_UPDATE';
-export const LASTNAME_UPDATE = 'LASTNAME_UPDATE';
