@@ -1,0 +1,24 @@
+// Import other styles files
+
+// import fonts
+@font-face {
+    font-family: "Futura_Book";
+    src: url("../fonts/futura_book_font.ttf");
+}
+
+@font-face {
+    font-family: "Futura_Light";
+    src: url("../fonts//futura_light_bt.ttf");
+}
+
+@font-face {
+    font-family: "Futura_Medium";
+    src: url("../fonts/futura_medium_bt.ttf");
+}
+
+@import './reset.scss';
+@import './App.scss';
+@import './Form.scss';
+@import './List.scss';
+@import './Person.scss';
+@import './EditForm.scss';

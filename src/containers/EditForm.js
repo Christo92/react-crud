@@ -31,7 +31,7 @@ class EditForm extends Component {
 
         return (
             <div>
-                <p>Edit Component</p>
+                <p>Edit this person</p>
                 <form onSubmit={this.handleUpdatePerson}>
                     <input
                         type="text"

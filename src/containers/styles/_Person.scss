@@ -1,0 +1,65 @@
+// Person styles
+
+.person-container {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+    li {
+        list-style-type: none;
+        display: flex;
+
+        &:last-of-type {
+            margin-top: 10px;
+        }
+
+        .person-container__label {
+            background-color: #595959;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .person-container__person {
+            padding: 5px;            
+        }
+    }
+
+    .person-container__buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        .person-container_edit {
+            transition: background-color 0.8s ease;
+            background: #27a716;
+            text-transform: uppercase;
+            color: white;
+            border-style: outset;
+            border-color: #27a716;
+            height: 25px;
+            font-size: 15px;
+            margin-right: 5px;
+    
+            &:hover {
+                background: #fff;
+                color: #27a716;
+            }
+        }
+
+        .person-container_remove {
+            transition: background-color 0.8s ease;
+            background: #bb1414;
+            text-transform: uppercase;
+            color: white;
+            border-style: outset;
+            border-color: #bb1414;
+            height: 25px;
+            font-size: 15px;
+    
+            &:hover {
+                background: #fff;
+                color: #bb1414;
+            }
+        }
+    }   
+}

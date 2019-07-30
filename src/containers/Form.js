@@ -34,10 +34,12 @@ class Form extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div className="form-container">
+                <h2 className="form-container__title">Person Form</h2>
+                <form className="form-container__form" onSubmit={this.handleSubmit}>
                     <p>Firstname :</p>
                     <input 
+                        className="form-container__inputFirstName"
                         type="text"
                         ref="inputFirsName"
                         placeholder="firstname" 
@@ -45,13 +47,13 @@ class Form extends Component {
                     />
                     <p>Lastname :</p>
                     <input 
+                        className="form-container__inputLastName"
                         type="text"
                         ref="inputLastName"
                         placeholder="lastname"
                         value={this.props.lastName}
                     />
-                    <br/><br/>
-                    <button>Submit</button>
+                    <button className="form-container__submit">Submit</button>
                 </form>
             </div>
         )

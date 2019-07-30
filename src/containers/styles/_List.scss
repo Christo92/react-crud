@@ -1,0 +1,44 @@
+// List styles
+
+.list-subtitle {
+    width: 100%;
+    text-align: center;
+
+    .list-subtitle__title {
+        font-family: "Futura_Light";
+        font-size: 22px;
+        text-align: center;
+        margin: 50px auto 25px;
+        width: 50%;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #595959;
+    }
+
+    .list-subtitle__removeAll {
+        transition: background-color 0.8s ease;
+        background: #bb1414;
+        text-transform: uppercase;
+        color: white;
+        border-style: outset;
+        border-color: #bb1414;
+        height: 35px;
+        font-size: 15px;
+        margin: 20px auto;
+        display: block;
+
+            &:hover {
+                background: #fff;
+                color: #bb1414;
+            }
+    }
+}
+
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.person-block {
+    width: 30%;
+    padding: 20px;
+}

@@ -1,0 +1,61 @@
+// Form css
+
+.form-container {
+    background-color: #595959;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    width: 60%;
+    margin: 0 auto;
+
+    .form-container__title {
+        font-family: "Futura_Medium";
+        background-color: #2c404b;
+        color: #FFF;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .form-container__form {
+        margin: 0 auto;
+        padding: 40px;
+
+        p {
+            font-family: "Futura_Light";
+            font-size: 17px;
+            padding-bottom: 15px;
+            color: #fff;
+
+            &:last-of-type {
+                margin-top: 15px;
+            }
+        }
+
+        input {
+            width: 98%;
+            padding: 5px;
+
+            &::placeholder {
+                color: #a3a3a3;
+            }
+
+        }
+
+        .form-container__submit {
+            transition: background-color 0.8s ease;
+            background: #0066A2;
+            text-transform: uppercase;
+            color: white;
+            border-style: outset;
+            border-color: #0066A2;
+            height: 35px;
+            width: 100px;
+            font-size: 15px;
+            margin: 20px auto;
+            display: block;
+
+            &:hover {
+                background: #fff;
+                color: #0066A2;
+            }
+        }
+    }
+}

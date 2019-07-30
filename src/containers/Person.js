@@ -27,11 +27,20 @@ class Person extends Component {
             <div>
                 {
                     // View of the person
-                    <div>
-                        <li>FirstName: {firstName} </li>
-                        <li>LastName: {lastName}</li>
-                        <button onClick={this.handleRemovePerson}>Remove</button>
-                        <button onClick={this.handleEditPerson}>Edit</button>
+                    <div className="person-container">
+                        <li className="person-container__firstName">
+                            <p className="person-container__label">FirstName:</p> 
+                            
+                            <p className="person-container__person">{firstName}</p>    
+                        </li>
+                        <li className="person-container__lastName">
+                            <p className="person-container__label">LastName:</p>
+                            <p className="person-container__person">{lastName}</p>   
+                        </li>
+                        <div className="person-container__buttons">
+                            <button className="person-container_edit" onClick={this.handleEditPerson}>Edit</button>
+                            <button className="person-container_remove" onClick={this.handleRemovePerson}>Remove</button>
+                        </div>
                     </div>
                 }
             </div>

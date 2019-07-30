@@ -19,22 +19,25 @@ class List extends Component {
 
         // Destructuring
         let personList = this.props.allPersons.formReducer;
-        let button;
+        let displayBlock;
 
         // To 
         if (personList.length > 0) {
-               button = <button onClick={this.handleRemoveAll}>Remove All</button>
+            displayBlock = <div className="list-subtitle">
+                                <h2 className="list-subtitle__title">Person List</h2>
+                                <button className="list-subtitle__removeAll" onClick={this.handleRemoveAll}>Remove All</button>
+                           </div>
         } else {
-               button = ''
+            displayBlock = ''
         }
 
         return (
             <div>
-                <h1>Person List</h1>
-                {button}
+                {displayBlock}
+                <div className="list-container">
                 {
                     personList.map(person => (
-                        <div key={person.id} >
+                        <div className="person-block" key={person.id} >
                             {
                                 person.isEditing ? (
                                     <EditForm person={person} key={person.id} />
@@ -49,6 +52,7 @@ class List extends Component {
                     )
                     )
                 }
+                </div>
             </div>
         )
     }

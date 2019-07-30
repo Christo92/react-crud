@@ -1,0 +1,27 @@
+// App.css
+
+body {
+    background-color: #aab9c5;
+    font-family: "Futura_Book";
+}
+
+.header {
+    background-color: #FFF;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+
+    .header__app-title {
+        font-size: 18px;
+    }
+}
+
+.sentence {
+    font-family: "Futura_Light";
+    font-size: 22px;
+    text-align: center;
+    margin: 50px auto 50px;
+    width: 50%;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #595959;
+}
+
