@@ -8,6 +8,10 @@ import { addPersonAction } from '../actions/formActions';
 
 class Form extends Component {
 
+    handleError = () => {
+        return <div>Field empty</div>
+    }
+
     // Submit the form
     handleSubmit = (e) => {
         e.preventDefault();
@@ -24,8 +28,13 @@ class Form extends Component {
             isEditing: false
         }
 
-        // Let's call the actionCreator
-        this.props.addPersonAction(data);
+        // 
+        if (firstName === '' && lastName === '') {
+            return this.handleError;
+        } else {
+            // Let's call the actionCreator
+            this.props.addPersonAction(data);
+        }
 
         // Empties the fields
         this.refs.inputFirsName.value = '';
@@ -33,6 +42,7 @@ class Form extends Component {
     };
 
     render() {
+
         return (
             <div className="form-container">
                 <h2 className="form-container__title">Person Form</h2>

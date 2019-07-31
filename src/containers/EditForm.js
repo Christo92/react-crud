@@ -30,22 +30,23 @@ class EditForm extends Component {
         let { firstName, lastName } = this.props.person;
 
         return (
-            <div>
-                <p>Edit this person</p>
+            <div className="editform-container">
+                <p className="editform-container__title">Edit this person</p>
                 <form onSubmit={this.handleUpdatePerson}>
+                    <p className="editform-container__updateFirstName">FirstName:</p>
                     <input
                         type="text"
                         ref="updateFirstName"
                         placeholder={firstName}
                     />
-                    <br /><br />
+                    <p className="editform-container__updateLastName">LastName:</p>
                     <input
                         type="text"
                         ref="updateLastName"
                         placeholder={lastName}
                     />
                     <br /><br />
-                    <button>Update</button>
+                    <button className="editform-container__updateButton">Update</button>
                 </form>
             </div>
         );
