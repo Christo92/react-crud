@@ -20,7 +20,8 @@
         }
 
         .person-container__person {
-            padding: 5px;            
+            padding: 5px;
+            word-wrap: break-word;            
         }
     }
 
@@ -62,4 +63,33 @@
             }
         }
     }   
+}
+
+.person-block {
+    width: 30%;
+    padding: 20px 10px;
+}
+
+@media (max-width: $desktop-screen) {
+    .person-block {
+        width: 30%;
+    }
+}
+
+@media (max-width: $tablet-screen) {
+    .person-block {
+        width: 45%;
+    }
+
+    .person-container {
+        li {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: $smartphone-screen) {
+    .person-block {
+        width: 100%;
+    }
 }

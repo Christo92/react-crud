@@ -16,6 +16,11 @@
     src: url("../fonts/futura_medium_bt.ttf");
 }
 
+// Responsive size
+$smartphone-screen: 320px;
+$tablet-screen: 768px;
+$desktop-screen: 1200px;
+
 @import './reset.scss';
 @import './App.scss';
 @import './Form.scss';

@@ -1,7 +1,7 @@
 // App.css
 
 body {
-    background-color: #aab9c5;
+    background-color: #f1f3f5;
     font-family: "Futura_Book";
 }
 
@@ -17,11 +17,32 @@ body {
 
 .sentence {
     font-family: "Futura_Light";
-    font-size: 22px;
     text-align: center;
     margin: 50px auto 50px;
     width: 50%;
     padding-bottom: 25px;
     border-bottom: 1px solid #595959;
 }
+
+@media (max-width: $desktop-screen) {
+    .sentence { 
+        font-size: 22px;
+        width: 50%;
+    }
+}
+
+@media (max-width: $tablet-screen) {
+    .sentence { 
+        font-size: 19px;
+        width: 70%;
+    }
+}
+
+@media (max-width: $smartphone-screen) {
+    .sentence { 
+        font-size: 16px;
+
+    }
+}
+
 
