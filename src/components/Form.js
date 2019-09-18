@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 // Actions 
 import { addPersonAction } from '../actions/formActions';
 
-class Form extends Component {
+export class Form extends Component {
 
     handleError = () => {
         return <div>Field empty</div>
