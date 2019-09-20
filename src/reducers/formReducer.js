@@ -1,7 +1,7 @@
 // Action Types
 import { ADD_PERSON, REMOVE_PERSON, REMOVE_ALL, EDIT_PERSON, UPDATE_PERSON } from '../actions/actionTypes';
 
-export function formReducer(state = [], action) {
+export default function formReducer(state = [], action) {
     switch(action.type) {
         case ADD_PERSON:
             // We update the array without to mutate
