@@ -8,10 +8,6 @@ import { addPersonAction } from '../actions/formActions';
 
 export class Form extends Component {
 
-    handleError = () => {
-        return <div>Field empty</div>
-    }
-
     // Submit the form
     handleSubmit = (e) => {
         e.preventDefault();
@@ -28,17 +24,20 @@ export class Form extends Component {
             isEditing: false
         }
 
-        // 
         if (firstName === '' && lastName === '') {
-            return this.handleError;
+            console.log("Both fields are empty");
+        } else if (firstName === '') {
+            console.log("firstName's field is empty");
+        } else if (lastName === '') {
+            console.log("lastName's field is empty");
         } else {
             // Let's call the actionCreator
             this.props.addPersonAction(data);
-        }
 
-        // Empties the fields
-        this.refs.inputFirsName.value = '';
-        this.refs.inputLastName.value = '';
+            // Empties the fields
+            this.refs.inputFirsName.value = '';
+            this.refs.inputLastName.value = '';
+        }
     };
 
     render() {

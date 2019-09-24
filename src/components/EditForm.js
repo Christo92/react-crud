@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // Action Types
 import { updatePersonAction } from '../actions/formActions';
 
-class EditForm extends Component {
+export class EditForm extends Component {
 
     // To update the person we selected
     handleUpdatePerson = (e) => {

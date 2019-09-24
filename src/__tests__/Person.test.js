@@ -17,17 +17,13 @@ describe('Person test', () => {
 
     const wrapper = shallow(<Person {...props}/>);
 
-    it('should show that props exist', () => {
-        expect(wrapper).toMatchSnapshot();
-    });
-
-
     it('handle the edit button', () => {
         const editButton = '.person-container_edit';
 
         // Check that edit button exists
         expect(wrapper.find(editButton).length).toEqual(1);
         wrapper.find(editButton).simulate('click');
+        expect(props.editPerson).toHaveBeenCalledTimes(1);
     });
 
     it('handle the remove button', () => {
@@ -36,6 +32,6 @@ describe('Person test', () => {
         // Check that remove button exists
         expect(wrapper.find(removeButton).length).toEqual(1);
         wrapper.find(removeButton).simulate('click');
-
+        expect(props.removePerson).toHaveBeenCalledTimes(1);
     });
 });

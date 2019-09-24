@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // Action Types
 import { removePersonAction, editPersonAction } from '../actions/formActions';
 
-class Person extends Component {
+export class Person extends Component {
 
     handleRemovePerson = () => {
         // Send the id of person to param

@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { removeAllPersonAction } from '../actions/formActions';
 
 
-class List extends Component {
+export class List extends Component {
 
     // Add remove all actions
     handleRemoveAll = () => {
@@ -18,11 +18,11 @@ class List extends Component {
     render() {
 
         // Destructuring
-        let personList = this.props.allPersons.formReducer;
+        let { formReducer } = this.props.allPersons;
         let displayBlock;
 
         // To 
-        if (personList.length > 0) {
+        if (formReducer.length > 0) {
             displayBlock = <div className="list-subtitle">
                                 <h2 className="list-subtitle__title">Person List</h2>
                                 <button className="list-subtitle__removeAll" onClick={this.handleRemoveAll}>Remove All</button>
@@ -35,8 +35,9 @@ class List extends Component {
             <div>
                 {displayBlock}
                 <div className="list-container">
+                
                 {
-                    personList.map(person => (
+                    formReducer.map(person => (
                         <div className="person-block" key={person.id} >
                             {
                                 person.isEditing ? (
