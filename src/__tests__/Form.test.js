@@ -7,7 +7,7 @@ describe('Form Test', () => {
 
     const props = {
         addPersonAction: jest.fn()
-    }
+    };
 
     const wrapper = shallow(<Form {...props}/>);
 
@@ -27,9 +27,6 @@ describe('Form Test', () => {
         expect(lastnameInput.length).toEqual(1);
         lastnameInput.simulate('focus');
         lastnameInput.simulate('change', { target: { value: 'Pars' } });
-
-        // expect(wrapper.ref('inputFirsName').innerText).to.equal('John');
-        // expect(wrapper.ref('inputLastName').innerText).to.equal('Pars');
 
         // let's give instance to refs
         wrapper.instance()[inputValue] = {

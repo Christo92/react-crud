@@ -18,7 +18,7 @@ export class EditForm extends Component {
         const data = {
             updateFirstName,
             updateLastName
-        }
+        };
         
         // Then we call the action creator
         this.props.updatePerson(idPerson, data);
@@ -32,15 +32,17 @@ export class EditForm extends Component {
         return (
             <div className="editform-container">
                 <p className="editform-container__title">Edit this person</p>
-                <form onSubmit={this.handleUpdatePerson}>
+                <form className="editform-container__form" onSubmit={this.handleUpdatePerson}>
                     <p className="editform-container__updateFirstName">FirstName:</p>
                     <input
+                        className="editform-container__inputFirstName"
                         type="text"
                         ref="updateFirstName"
                         placeholder={firstName}
                     />
                     <p className="editform-container__updateLastName">LastName:</p>
                     <input
+                        className="editform-container__inputLastName"
                         type="text"
                         ref="updateLastName"
                         placeholder={lastName}
