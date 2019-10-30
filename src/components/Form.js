@@ -5,6 +5,8 @@ import Uuid from 'uuid/v4';
 import { connect } from 'react-redux';
 // Actions 
 import { addPersonAction } from '../actions/formActions';
+// PropTypes
+import PropTypes from 'prop-types';
 
 export class Form extends Component {
 
@@ -85,5 +87,11 @@ const mapDispatchToProps = dispatch => {
         }
     }
 };
+
+Form.propTypes = {
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    addPersonAction: PropTypes.func.isRequired
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

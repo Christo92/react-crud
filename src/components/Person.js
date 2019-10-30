@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // Action Types
 import { removePersonAction, editPersonAction } from '../actions/formActions';
+// PropTypes
+import PropTypes from 'prop-types';
 
 export class Person extends Component {
 
@@ -59,5 +61,14 @@ const mapDispatchToProps = dispatch => {
         }
     }
 };
+
+Person.propTypes = {
+    person: PropTypes.shape({
+        firstName: PropTypes.string,
+        lastName: PropTypes.string
+    }).isRequired,
+    removePerson: PropTypes.func.isRequired,
+    editPerson: PropTypes.func.isRequired
+}
 
 export default connect(null, mapDispatchToProps)(Person);

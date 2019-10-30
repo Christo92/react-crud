@@ -6,6 +6,8 @@ import EditForm from './EditForm';
 import { connect } from 'react-redux';
 // Action Types
 import { removeAllPersonAction } from '../actions/formActions';
+// PropTypes
+import PropTypes from 'prop-types';
 
 
 export class List extends Component {
@@ -73,6 +75,13 @@ const mapDispatchToProps = dispatch => {
             dispatch(removeAllPersonAction())
         }
     }
+}
+
+List.propTypes = {
+    allPersons: PropTypes.shape({
+        formReducer: PropTypes.array
+    }).isRequired,
+    removeAllPersons: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);
