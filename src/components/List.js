@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // Components
 import Person from './Person';
 import EditForm from './EditForm';
@@ -9,35 +9,32 @@ import { removeAllPersonAction } from '../actions/formActions';
 // PropTypes
 import PropTypes from 'prop-types';
 
-
-export class List extends Component {
+export const List = (props) => {
 
     // Add remove all actions
-    handleRemoveAll = () => {
-        this.props.removeAllPersons();
+    function handleRemoveAll() {
+        props.removeAllPersons();
     };
 
-    render() {
+    // Destructuring
+    let { formReducer } = props.allPersons;
+    let displayBlock;
 
-        // Destructuring
-        let { formReducer } = this.props.allPersons;
-        let displayBlock;
+    // To 
+    if (formReducer.length > 0) {
+        displayBlock = <div className="list-subtitle">
+            <h2 className="list-subtitle__title">Person List</h2>
+            <button className="list-subtitle__removeAll" onClick={handleRemoveAll}>Remove All</button>
+        </div>
+    } else {
+        displayBlock = ''
+    }
 
-        // To 
-        if (formReducer.length > 0) {
-            displayBlock = <div className="list-subtitle">
-                                <h2 className="list-subtitle__title">Person List</h2>
-                                <button className="list-subtitle__removeAll" onClick={this.handleRemoveAll}>Remove All</button>
-                           </div>
-        } else {
-            displayBlock = ''
-        }
+    return (
+        <div>
+            {displayBlock}
+            <div className="list-container">
 
-        return (
-            <div>
-                {displayBlock}
-                <div className="list-container">
-                
                 {
                     formReducer.map(person => (
                         <div className="person-block" key={person.id} >
@@ -55,11 +52,9 @@ export class List extends Component {
                     )
                     )
                 }
-                </div>
             </div>
-        )
-    }
-
+        </div>
+    )
 }
 
 // Let's change state to props
