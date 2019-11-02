@@ -15,3 +15,5 @@ https://www.npmjs.com/package/react-redux
 
 node-sass: to use scss with Create-React-App without eject
 https://www.npmjs.com/package/node-sass
+
+For testing : enzyme, enzyme-adapter-react-16
